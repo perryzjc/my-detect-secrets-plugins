@@ -1,7 +1,19 @@
-# Customized Plugins for Detect Secret
-This page contains additional customized plugins for the open-source tool [detect secret](https://github.com/Yelp/detect-secrets), to provide additional secret types for the tool to detect. These plugins meet the needs from the [SLIM](https://github.com/NASA-AMMOS/slim) community based on the issue ticket: [Automated checking for general sensitive information within Git](https://github.com/NASA-AMMOS/slim/issues/89).
+# Starter Kit: Setup for Detect Secret
+This folder contains
+1. The default baseline file `.secrets.baseline` for the open-source tool [detect secret](https://github.com/Yelp/detect-secrets), used to compare against the current codebase to detect any new secrets.
+2. Additional customized plugins to provide additional secret types for the tool to detect. These plugins meet the needs from the [SLIM](https://github.com/NASA-AMMOS/slim) community based on the issue ticket: [Automated checking for general sensitive information within Git](https://github.com/NASA-AMMOS/slim/issues/89).
 Please see categories and links below for more details.
 
+```text
+├── .secrets.baseline
+├── plugins
+│   ├── absolute_filepath.py
+│   ├── aws_sensitive_info.py
+│   ├── email_address.py
+│   └── ip_address.py
+```
+> Note: We are in the progress of contributing these general plugins back to the `detect-secrets` community. 
+> Once they are accepted, we will remove them from this repository and use the official plugins instead.
 ## Plugins
 * [AWS Sensitive Information detection](#plugin-1---aws-sensitive-information-detection)
 * [IP Address detection](#plugin-2---ip-address-detection)
@@ -34,7 +46,7 @@ Check implementation [here](aws_sensitive_info.py) to learn more about the regex
 This plugin is designed to detect IP address mentioned in this [discussion](https://github.com/NASA-AMMOS/slim/issues/89#issuecomment-1433567397)
 
 ## Plugin 3 - Email Address detection
-This plugin is designed to detect email address.
+This plugin is designed to detect email address with few exceptions for common email address, such as `git@`
 
 ## Plugin 4 - Absolute Path detection
 This plugin is designed to detect absolute path.
