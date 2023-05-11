@@ -1,1 +1,0 @@
-# my-detect-secrets-plugins
